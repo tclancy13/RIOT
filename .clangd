@@ -1,0 +1,19 @@
+%YAML 1.2
+---
+CompileFlags:
+  Add:
+    [
+      -I/home/timothyclancy/dev/RIOT/cpu/cortexm_common/include,
+      -I/home/timothyclancy/dev/RIOT/cpu/sam0_common/include,
+      -I/home/timothyclancy/dev/RIOT/core/include,
+      -I/home/timothyclancy/dev/llvm_arm/lib/clang/13.0.0/include,
+      --sysroot=/home/timothyclancy/dev/llvm-arm
+      -std=c17,
+      -m32,
+      --target=arm-none-eabi,
+      -mcpu=cortex-m7,
+      -mfpu=fpv5-dp-d16,
+      -mfloat-abi=hard,
+      -fuse-ld=lld,
+    ]
+  Remove: [ -xobjective-c++-header ]
